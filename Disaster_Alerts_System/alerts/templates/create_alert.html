@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Alert</title>
+</head>
+<body>
+    <h1>Create a New Disaster Alert</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Alert</button>
+    </form>
+    <a href="{% url 'list_alerts' %}">Back to Alerts</a>
+</body>
+</html>

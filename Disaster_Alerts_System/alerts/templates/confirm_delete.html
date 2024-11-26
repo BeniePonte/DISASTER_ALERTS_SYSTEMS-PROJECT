@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Alert</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete this alert?</h1>
+    <p><strong>Type:</strong> {{ alert.type }}</p>
+    <p><strong>Location:</strong> {{ alert.location }}</p>
+    <p><strong>Severity:</strong> {{ alert.severity }}</p>
+    <p><strong>Description:</strong> {{ alert.description }}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <a href="{% url 'list_alerts' %}">Cancel</a>
+</body>
+</html>

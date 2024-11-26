@@ -1,0 +1,16 @@
+<!-- alerts/list_alerts.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alerts</title>
+</head>
+<body>
+    <h1>Disaster Alerts</h1>
+    <ul>
+        {% for alert in alerts %}
+            <li>{{ alert.type }} - {{ alert.location }} - {{ alert.severity }} - {{ alert.timestamp }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Alerts</title>
+</head>
+<body>
+    <h1>Disaster Alerts</h1>
+    <a href="{% url 'create_alert' %}">Create New Alert</a>
+    <ul>
+        {% for alert in alerts %}
+            <li>
+                <strong>{{ alert.type }}</strong> at {{ alert.location }} (Severity: {{ alert.severity }})
+                <p>{{ alert.description }}</p>
+                <p>Timestamp: {{ alert.timestamp }}</p>
+                <a href="{% url 'update_alert' alert.id %}">Edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
