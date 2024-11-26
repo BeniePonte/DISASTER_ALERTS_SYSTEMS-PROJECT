@@ -16,7 +16,7 @@ class DisasterAlert(models.Model):
 
     def __str__(self):
         return self.type
-        
+
 class UserProfile(AbstractUser):
     birth_date = models.DateField(null=True, blank=True)
 
@@ -30,10 +30,10 @@ class DisasterAlert(models.Model):
         ('storm', 'Storm'),
         ('wildfire', 'Wildfire'),
     ]
-    type = models.CharField(max_length=50, choices=TYPE_CHOICES)  # Ce champ ne doit pas accepter NULL
+    type = models.CharField(max_length=50, choices=TYPE_CHOICES)  
     location = models.CharField(max_length=255)
     severity = models.IntegerField()
-    description = models.TextField(null=True, blank=True)  # Facultatif
+    description = models.TextField(null=True, blank=True)  
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

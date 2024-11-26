@@ -1,16 +1,24 @@
-<!-- alerts/list_alerts.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Alerts</title>
+    <title>Disaster Alerts</title>
 </head>
 <body>
     <h1>Disaster Alerts</h1>
-    <ul>
-        {% for alert in alerts %}
-            <li>{{ alert.type }} - {{ alert.location }} - {{ alert.severity }} - {{ alert.timestamp }}</li>
-        {% endfor %}
-    </ul>
+
+    <!-- Display Disaster Alerts -->
+    {% for alert in alerts %}
+        <div>
+            <p>
+                {{ alert.type }} - {{ alert.location }} - Severity: {{ alert.severity }} - 
+                Timestamp: {{ alert.timestamp }}
+            </p>
+        </div>
+    {% endfor %}
+
+    <!-- Back to Home Button -->
+    <a href="{% url 'home' %}">
+        <button>Back to Homepage</button>
+    </a>
 </body>
 </html>

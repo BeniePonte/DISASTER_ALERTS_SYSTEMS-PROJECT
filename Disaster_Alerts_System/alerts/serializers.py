@@ -6,7 +6,7 @@ class DisasterAlertSerializer(serializers.ModelSerializer):
         model = DisasterAlert
         fields = ['type', 'location', 'severity', 'description', 'timestamp']
         extra_kwargs = {
-            'type': {'required': True},  # Assurez-vous que ce champ est obligatoire
+            'type': {'required': True},  
             'location': {'required': True},
             'severity': {'required': True},
         }

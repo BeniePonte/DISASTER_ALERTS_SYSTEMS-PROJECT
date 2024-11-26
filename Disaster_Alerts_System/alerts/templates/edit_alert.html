@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Alert</title>
+</head>
+<body>
+    <h1>Edit Disaster Alert</h1>
+
+    <!-- Optionally remove or comment out the messages section -->
+    <!-- {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %} -->
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Render the form fields -->
+        <button type="submit">Update Alert</button>
+    </form>
+
+    <a href="{% url 'home' %}">Back to Alerts</a>
+</body>
+</html>
