@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Alert</title>
+</head>
+<body>
+    <h1>Create a New Disaster Alert</h1>
+
+    <!-- Display success or error messages -->
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Form for creating an alert -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Display the form -->
+        <button type="submit">Create Alert</button>
+    </form>
+
+    <a href="{% url 'list_alerts' %}">Back to Alerts</a>  <!-- Link to the list of alerts -->
+</body>
+</html>

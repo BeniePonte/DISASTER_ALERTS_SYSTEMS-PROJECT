@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disaster Alerts</title>
+</head>
+<body>
+    <h1>Disaster Alerts</h1>
+
+    <!-- Display Disaster Alerts -->
+    {% for alert in alerts %}
+        <div>
+            <p>
+                {{ alert.type }} - {{ alert.location }} - Severity: {{ alert.severity }} - 
+                Timestamp: {{ alert.timestamp }}
+            </p>
+        </div>
+    {% endfor %}
+
+    <!-- Back to Home Button -->
+    <a href="{% url 'home' %}">
+        <button>Back to Homepage</button>
+    </a>
+</body>
+</html>
